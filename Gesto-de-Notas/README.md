@@ -11,7 +11,7 @@ Permite cadastrar disciplinas, inserir notas e acompanhar o desempenho do aluno.
 - Cadastro de disciplinas
 - Inserção de até **4 notas**
 - Cálculo automático da média
-- Exibição da situação (aprovado/reprovado)
+- Exibição da situação 
 
 
 ### Faculdade
