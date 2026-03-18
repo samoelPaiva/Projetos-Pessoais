@@ -1,0 +1,30 @@
+{
+    "escola": [
+        {
+            "disciplina": "Português",
+            "notas": [
+                7.0,
+                8.0,
+                9.0,
+                6.0
+            ]
+        },
+        {
+            "disciplina": "Matemática",
+            "notas": [
+                8.0,
+                9.0,
+                4.0
+            ]
+        }
+    ],
+    "faculdade": [
+        {
+            "disciplina": "Banco de Dados",
+            "notas": [
+                10.0,
+                8.0
+            ]
+        }
+    ]
+}
