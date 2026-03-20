@@ -11,7 +11,6 @@ def show_transition(janela, callback):
 
     gif_path = Rota / 'assets' / 'transicao.gif'
 
-    # Garante tamanho correto
     janela.update_idletasks()
     width = janela.winfo_width()
     height = janela.winfo_height()

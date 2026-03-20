@@ -11,7 +11,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
     frame.grid_rowconfigure(0, weight=1)
     frame.grid_columnconfigure(0, weight=1)
 
-    # ================= CONTAINER =================
     main_container = tk.Frame(frame, bg=COLORS['bg_primary'])
     main_container.grid(row=0, column=0, sticky='nsew')
 
@@ -20,7 +19,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
     main_container.grid_rowconfigure(2, weight=1)
     main_container.grid_columnconfigure(0, weight=1)
 
-    # ================= HEADER =================
     header = tk.Frame(main_container, bg=COLORS['card_bg'])
     header.grid(row=0, column=0, sticky='ew', padx=40, pady=(30, 15))
     header.grid_columnconfigure(0, weight=1)
@@ -46,7 +44,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
 
     tk.Frame(header, bg=COLORS['text_primary'], height=2).grid(row=3, column=0, sticky='ew')
 
-    # ================= CARD =================
     card = tk.Frame(main_container, bg=COLORS['card_bg'])
     card.grid(row=1, column=0, sticky='nsew', padx=40, pady=10)
 
@@ -62,7 +59,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
     inner.grid_rowconfigure(1, weight=1)
     inner.grid_columnconfigure(0, weight=1)
 
-    # ================= BOTÕES =================
     buttons_wrapper = tk.Frame(inner, bg=COLORS['card_bg'])
     buttons_wrapper.grid(row=0, column=0, pady=10)
 
@@ -95,7 +91,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
         btn.bind("<Leave>", on_leave)
         btn.bind("<Button-1>", on_click)
 
-    # ================= TABELA =================
     tabela_container = tk.Frame(inner, bg=COLORS['card_bg'])
     tabela_container.grid(row=1, column=0, sticky='nsew')
 
@@ -108,13 +103,12 @@ def criar_tela_escolar(janela, COLORS, app_manager):
 
         dados = carregar_dados()
 
-        # CONFIG COLUNAS
         tabela_container.grid_columnconfigure(0, weight=2)
         tabela_container.grid_columnconfigure(1, weight=2)
         tabela_container.grid_columnconfigure(2, weight=2)
         tabela_container.grid_columnconfigure(3, weight=2)
 
-        # HEADER
+
         headers = ["Matéria", "Notas", "Status", "Média ou Objetivo"]
 
         for col, text in enumerate(headers):
@@ -128,11 +122,9 @@ def criar_tela_escolar(janela, COLORS, app_manager):
                 anchor='center'
             ).grid(row=0, column=col, sticky="nsew", padx=1, pady=1)
 
-        # LINHAS
         for i, disc in enumerate(dados["escola"]):
             row_index = i + 1
 
-            # Matéria
             tk.Label(
                 tabela_container,
                 text=disc['disciplina'],
@@ -144,8 +136,7 @@ def criar_tela_escolar(janela, COLORS, app_manager):
                 wraplength=120
             ).grid(row=row_index, column=0, sticky="nsew", padx=1, pady=1)
 
-            # Notas (todas juntas)
-            notas_texto = "  ".join(str(n) for n in disc['notas'])
+            notas_texto = "    ".join(str(n) for n in disc['notas'])
 
             tk.Label(
                 tabela_container,
@@ -157,7 +148,7 @@ def criar_tela_escolar(janela, COLORS, app_manager):
                 anchor='center'
             ).grid(row=row_index, column=1, sticky="nsew", padx=1, pady=1)
 
-            # Status
+    
             status = status_escolar(disc['notas'])
 
             tk.Label(
@@ -170,7 +161,7 @@ def criar_tela_escolar(janela, COLORS, app_manager):
                 anchor='center'
             ).grid(row=row_index, column=2, sticky="nsew", padx=1, pady=1)
 
-            # Resultado
+
             obj = objetivo_ou_final(disc['notas'])
 
             texto = ""
@@ -430,7 +421,6 @@ def criar_tela_escolar(janela, COLORS, app_manager):
     def cadastrar_disciplina():
         show_transition(janela, app_manager.mostrar_cadastro_disciplina)
             
-    # ================= BOTÕES =================
     criar_botao("Cadastrar disciplina", cadastrar_disciplina, 0, 0 )
     criar_botao("Remover disciplina", abrir_remocao, 0, 1)
     criar_botao("Adicionar/Editar nota", abrir_edicao, 1, 0)

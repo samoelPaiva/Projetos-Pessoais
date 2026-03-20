@@ -9,7 +9,6 @@ def criar_tela_duvida(janela, COLORS, app_manager):
     frame_duvida.grid_rowconfigure(0, weight=1)
     frame_duvida.grid_columnconfigure(0, weight=1)
 
-    # ================= CONTAINER =================
     main_container = tk.Frame(frame_duvida, bg=COLORS['bg_primary'])
     main_container.grid(row=0, column=0, sticky='nsew')
     main_container.grid_rowconfigure(0, weight=1)
@@ -17,7 +16,6 @@ def criar_tela_duvida(janela, COLORS, app_manager):
     main_container.grid_rowconfigure(2, weight=1)
     main_container.grid_columnconfigure(0, weight=1)
 
-    # ================= HEADER =================
     header = tk.Frame(main_container, bg=COLORS['card_bg'])
     header.grid(row=0, column=0, sticky='ew', padx=40, pady=(30, 15))
     header.grid_columnconfigure(0, weight=1)
@@ -44,7 +42,6 @@ def criar_tela_duvida(janela, COLORS, app_manager):
 
     tk.Frame(header, bg=COLORS['text_primary'], height=2).grid(row=3, column=0, sticky='ew')
 
-    # ================= CARD =================
     card = tk.Frame(main_container, bg=COLORS['card_bg'])
     card.grid(row=1, column=0, sticky='nsew', padx=40, pady=10)
     card.grid_rowconfigure(0, weight=1)
@@ -54,7 +51,6 @@ def criar_tela_duvida(janela, COLORS, app_manager):
     inner.grid(row=0, column=0, sticky='nsew', padx=20, pady=20)
     inner.grid_columnconfigure(0, weight=1)
 
-    # ================= DÚVIDAS =================
     duvidas = [
         {
             "pergunta": "Por que o aplicativo não tem uma quarta prova ou recuperação?",

@@ -9,7 +9,6 @@ def criar_tela_cadastro_disciplina(janela, COLORS, app_manager):
 
     frame.grid_columnconfigure(0, weight=1)
 
-    # ================= HEADER =================
     header = tk.Frame(frame, bg=COLORS['card_bg'])
     header.grid(row=0, column=0, sticky='ew', padx=40, pady=(30, 10))
     header.grid_columnconfigure(0, weight=1)
@@ -34,12 +33,10 @@ def criar_tela_cadastro_disciplina(janela, COLORS, app_manager):
 
     tk.Frame(header, bg=COLORS['text_primary'], height=2).grid(row=3, column=0, sticky='ew')
 
-    # ================= CONTAINER =================
     container = tk.Frame(frame, bg=COLORS['card_bg'])
     container.grid(row=1, column=0, sticky='nsew', padx=40, pady=10)
     container.grid_columnconfigure(0, weight=1)
 
-    # Nome disciplina
     tk.Label(
         container,
         text="Nome da disciplina",
@@ -51,7 +48,6 @@ def criar_tela_cadastro_disciplina(janela, COLORS, app_manager):
     entry_nome = tk.Entry(container, font=('Segoe UI', 12), justify='center')
     entry_nome.grid(row=1, column=0, pady=(0, 15))
 
-    # Notas
     notas_frame = tk.Frame(container, bg=COLORS['card_bg'])
     notas_frame.grid(row=2, column=0, pady=10)
 
@@ -70,7 +66,6 @@ def criar_tela_cadastro_disciplina(janela, COLORS, app_manager):
 
         entradas_notas.append(entry)
 
-    # ================= FUNÇÕES =================
     def receber_nota(entry):
         texto = entry.get().strip()
 
@@ -124,7 +119,6 @@ def criar_tela_cadastro_disciplina(janela, COLORS, app_manager):
         limpar_campos()
         janela.after(100, lambda: show_transition(janela, app_manager.mostrar_med_escolar))
 
-    # ================= BOTÕES =================
     botoes = tk.Frame(container, bg=COLORS['card_bg'])
     botoes.grid(row=3, column=0, pady=20)
 
